@@ -37,29 +37,33 @@ function App() {
   return (
     <>
       <NavBar />
-      <Switch>
-        <Route
-          path="/controlAdmin/addAdmin"
-          exact
-          render={(props) => <AddAdminPage onCreate={addArticle} {...props} />}
-        />
-        <Route
-          path="/login/controlAdmin"
-          render={(props) => (
-            <ControlAdminPage
-              articles={articles}
-              onDelete={handleDelete}
-              {...props}
-            />
-          )}
-        />
-        <Route path="/registration" component={RegistrationPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route
-          path="/:articleId?"
-          render={(props) => <MainPage articles={articles} {...props} />}
-        />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route
+            path="/controlAdmin/addAdmin"
+            exact
+            render={(props) => (
+              <AddAdminPage onCreate={addArticle} {...props} />
+            )}
+          />
+          <Route
+            path="/login/controlAdmin"
+            render={(props) => (
+              <ControlAdminPage
+                articles={articles}
+                onDelete={handleDelete}
+                {...props}
+              />
+            )}
+          />
+          <Route path="/registration" component={RegistrationPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route
+            path="/:articleId?"
+            render={(props) => <MainPage articles={articles} {...props} />}
+          />
+        </Switch>
+      </div>
     </>
   )
 }

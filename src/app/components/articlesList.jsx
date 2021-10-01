@@ -5,8 +5,8 @@ const ArticlesList = ({ articles }) => {
   return (
     <>
       {articles.length ? (
-        <div>
-          <h1>Статьи</h1>
+        <div className="wrapper">
+          <h1 className="title">Статьи</h1>
           <Article articles={articles} />
         </div>
       ) : (

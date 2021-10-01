@@ -2,16 +2,17 @@ import React from 'react'
 
 const RegistrationPage = () => {
   return (
-    <div className="d-flex justify-content-center">
-      <div className="w-50 d-flex flex-column align-items-center">
+    <div className="container">
+      <div className="wrapper">
         <h3>Регистрация</h3>
-        <div className="mb-3">
+        <div className="m-2">
           <input
             type="text"
             className="form-control"
             placeholder="Логин"
             aria-label="Username"
           />
+          <br />
           <input
             type="password"
             className="form-control"
@@ -19,7 +20,7 @@ const RegistrationPage = () => {
             aria-label="Passwrod"
           />
         </div>
-        <button>Зарегистрироваться</button>
+        <button className="button m-2">Зарегистрироваться</button>
       </div>
     </div>
   )

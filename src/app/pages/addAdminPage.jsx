@@ -17,8 +17,8 @@ const AddAdminPage = ({ onCreate }) => {
   }
   return (
     <form onSubmit={handleAdd}>
-      <div className="d-flex justify-content-center">
-        <div className="w-50 d-flex flex-column align-items-center">
+      <div className="container">
+        <div className="wrapper">
           <h3>Добавление статьи</h3>
           <div className="m-3">
             <input
@@ -29,6 +29,7 @@ const AddAdminPage = ({ onCreate }) => {
               value={value1}
               onChange={(event) => setValue1(event.target.value)}
             />
+            <br />
             <input
               type="text"
               className="form-control"
@@ -39,12 +40,15 @@ const AddAdminPage = ({ onCreate }) => {
             />
           </div>
           <textarea
-            className="form-control"
-            rows="3"
+            className="form-control w-50 h-50"
+            rows="10"
             value={value3}
             onChange={(event) => setValue3(event.target.value)}
+            placeholder="Полный текст"
           ></textarea>
-          <button type="submit">Опубликовать</button>
+          <button type="submit" className="button mt-3">
+            Опубликовать
+          </button>
         </div>
       </div>
     </form>

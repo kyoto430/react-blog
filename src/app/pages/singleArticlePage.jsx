@@ -11,10 +11,10 @@ const SingleArticlePage = ({ articles, id }) => {
   }
   return (
     <div className="container">
-      <div className="card w-100 text-center">
-        <div className="card-body">
-          <h5 className="card-title">{articleById.title}</h5>
-          <p className="card-text">{articleById.fullText}</p>
+      <div className="wrapper">
+        <div className="article-body-full">
+          <h5 className="article-title">{articleById.title}</h5>
+          <p className="article-text">{articleById.fullText}</p>
         </div>
       </div>
     </div>
