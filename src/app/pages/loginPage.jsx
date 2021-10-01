@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom'
 
 const LoginPage = () => {
   return (
-    <div className="d-flex justify-content-center">
-      <div className="w-50 d-flex flex-column align-items-center">
-        <h3>Вход</h3>
-        <div className="mb-3">
+    <div className="container">
+      <div className="wrapper">
+        <h2>Вход</h2>
+        <div className="m-2">
           <input
             type="text"
             className="form-control"
             placeholder="Логин"
             aria-label="Username"
           />
+          <br />
           <input
             type="password"
             className="form-control"
@@ -20,11 +21,15 @@ const LoginPage = () => {
             aria-label="Passwrod"
           />
         </div>
-        <button>
-          <Link to="login/controlAdmin">Войти</Link>
-        </button>
-        <div>
-          <Link to="/registration">Зарегистрироваться</Link>
+        <div className="m-3">
+          <Link to="login/controlAdmin" className="button">
+            Войти
+          </Link>
+        </div>
+        <div className="m-1">
+          <Link to="/registration" className="link">
+            Зарегистрироваться
+          </Link>
         </div>
       </div>
     </div>

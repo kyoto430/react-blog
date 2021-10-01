@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav className="nav justify-content-end">
-      <Link className="nav-link" to="/">
-        Статьи
+    <nav className="navigation">
+      <Link className="navigation-link" to="/">
+        Главная
       </Link>
-      <Link className="nav-link" to="/login">
+      <Link className="navigation-link" to="/login">
         Вход/Регистрация
       </Link>
     </nav>

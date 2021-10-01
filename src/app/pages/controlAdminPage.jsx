@@ -3,19 +3,26 @@ import { Link } from 'react-router-dom'
 
 const ControlAdminPage = ({ articles, onDelete }) => {
   return (
-    <div className="d-flex flex-column">
-      <div className="d-flex justify-content-between">
+    <div className="container">
+      <div className="container-control">
         {articles.length ? <h1>Статьи</h1> : <h1>Статьи отсутствуют!</h1>}
-        <button>
-          <Link to="/controlAdmin/addAdmin">Создать статью</Link>
-        </button>
+        <div>
+          <Link to="/controlAdmin/addAdmin" className="button">
+            Создать статью
+          </Link>
+        </div>
       </div>
-      <div className="card-group text-center">
+      <div className="d-flex justify-content-start flex-wrap">
         {articles.map((article) => (
-          <div key={article.id} className="card w-100">
-            <div className="card-body">
-              <h5 className="card-title">{article.title}</h5>
-              <button onClick={() => onDelete(article.id)}>Удалить</button>
+          <div key={article.id} className="article">
+            <div className="article-control-body">
+              <div className="m-2">{article.title}</div>
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => onDelete(article.id)}
+              >
+                X
+              </button>
             </div>
           </div>
         ))}
