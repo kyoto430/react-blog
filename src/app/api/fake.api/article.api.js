@@ -1,4 +1,4 @@
-export const api = [
+export const articles = [
   {
     id: 1,
     title: 'Заголовок 1',
@@ -24,3 +24,22 @@ export const api = [
     fullText: 'Полный текст 4',
   },
 ]
+
+const fetchAll = () =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(articles)
+    }, 2000)
+  })
+
+const getById = (id) =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(articles.find((article) => article.id.toString() === id))
+    }, 1000)
+  })
+
+export default {
+  fetchAll,
+  getById,
+}

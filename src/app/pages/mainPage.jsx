@@ -1,23 +1,21 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { useState } from 'react'
-import { api } from '../api/fake.api'
 import ArticlesList from '../components/articlesList'
 import SingleArticlePage from './singleArticlePage'
+import Loader from '../components/loader'
 
-const MainPage = () => {
-  const [articles, setArticles] = useState(api)
+const MainPage = ({ articles }) => {
   const params = useParams()
   const { articleId } = params
-  return (
-    <>
-      {articleId ? (
-        <SingleArticlePage articles={articles} id={articleId} />
-      ) : (
-        <ArticlesList articles={articles} />
-      )}
-    </>
-  )
+
+  if (articles) {
+    return articleId ? (
+      <SingleArticlePage articles={articles} id={articleId} />
+    ) : (
+      <ArticlesList articles={articles} />
+    )
+  }
+  return <Loader />
 }
 
 export default MainPage

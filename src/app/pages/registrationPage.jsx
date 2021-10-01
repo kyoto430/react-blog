@@ -5,7 +5,7 @@ const RegistrationPage = () => {
     <div className="d-flex justify-content-center">
       <div className="w-50 d-flex flex-column align-items-center">
         <h3>Регистрация</h3>
-        <div className="input-group mb-3">
+        <div className="mb-3">
           <input
             type="text"
             className="form-control"
