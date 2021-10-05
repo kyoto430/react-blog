@@ -5,7 +5,7 @@ const LoginPage = () => {
   return (
     <div className="container">
       <div className="wrapper">
-        <h2>Вход</h2>
+        <h2 className="mt-2">Вход</h2>
         <div className="m-2">
           <input
             type="text"
