@@ -23,6 +23,18 @@ export const articles = [
     shortText: 'Короткий текст 4',
     fullText: 'Полный текст 4',
   },
+  {
+    id: 5,
+    title: 'Заголовок 5',
+    shortText: 'Короткий текст 5',
+    fullText: 'Полный текст 5',
+  },
+  {
+    id: 6,
+    title: 'Заголовок 6',
+    shortText: 'Короткий текст 6',
+    fullText: 'Полный текст 6',
+  },
 ]
 
 const fetchAll = () =>

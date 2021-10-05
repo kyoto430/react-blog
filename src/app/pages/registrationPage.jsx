@@ -4,7 +4,7 @@ const RegistrationPage = () => {
   return (
     <div className="container">
       <div className="wrapper">
-        <h3>Регистрация</h3>
+        <h3 className="mt-2">Регистрация</h3>
         <div className="m-2">
           <input
             type="text"

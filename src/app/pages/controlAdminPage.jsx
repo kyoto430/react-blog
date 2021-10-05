@@ -5,14 +5,18 @@ const ControlAdminPage = ({ articles, onDelete }) => {
   return (
     <div className="container">
       <div className="container-control">
-        {articles.length ? <h1>Статьи</h1> : <h1>Статьи отсутствуют!</h1>}
+        {articles.length ? (
+          <span className="title">Статьи</span>
+        ) : (
+          <h1>Статьи отсутствуют!</h1>
+        )}
         <div>
           <Link to="/controlAdmin/addAdmin" className="button">
             Создать статью
           </Link>
         </div>
       </div>
-      <div className="d-flex justify-content-start flex-wrap">
+      <div className="d-flex justify-content-center flex-wrap mb-2">
         {articles.map((article) => (
           <div key={article.id} className="article">
             <div className="article-control-body">
