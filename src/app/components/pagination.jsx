@@ -9,7 +9,7 @@ const Pagination = ({ articlesCount, pageSize, onPageChange, currentPage }) => {
   const arrayPages = pagesArray(pageCount)
   return (
     <nav className="d-flex justify-content-center">
-      <ul className="pagination">
+      <ul className="pagination cursor">
         {arrayPages.map((page) => (
           <li
             key={page}

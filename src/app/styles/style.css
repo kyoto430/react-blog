@@ -12,10 +12,10 @@ body {
   color: #fff;
 }
 
-.container {
+/* .container {
   width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .wrapper {
   display: flex;
@@ -126,11 +126,14 @@ body {
 
 .article-control-body {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   max-width: 500px;
   border-radius: 2px;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
   background-color: #333;
+}
+
+.cursor {
+  cursor: pointer;
 }

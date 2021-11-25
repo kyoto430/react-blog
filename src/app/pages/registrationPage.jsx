@@ -1,26 +1,37 @@
 import React from 'react'
+import TextField from '../components/textField'
 
-const RegistrationPage = () => {
+const RegistrationPage = ({ onChange, onSubmit, data, errors, isValid }) => {
   return (
-    <div className="container">
-      <div className="wrapper">
-        <h3 className="mt-2">Регистрация</h3>
-        <div className="m-2">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Логин"
-            aria-label="Username"
-          />
-          <br />
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Пароль"
-            aria-label="Passwrod"
-          />
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-md-6 offset-md-3 shadow p-4">
+          <h3 className="mb-4 text-center">Регистрация</h3>
+          <form onSubmit={onSubmit}>
+            <TextField
+              label="Электронная почта"
+              name="email"
+              value={data.email}
+              onChange={onChange}
+              error={errors.email}
+            />
+            <TextField
+              label="Пароль"
+              type="password"
+              name="password"
+              value={data.password}
+              onChange={onChange}
+              error={errors.password}
+            />
+            <button
+              type="submit"
+              disabled={!isValid}
+              className="btn btn-primary mx-auto w-100"
+            >
+              Зарегистрироваться
+            </button>
+          </form>
         </div>
-        <button className="button m-2">Зарегистрироваться</button>
       </div>
     </div>
   )
