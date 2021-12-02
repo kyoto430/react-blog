@@ -16,7 +16,7 @@ const Pagination = ({ articlesCount, pageSize, onPageChange, currentPage }) => {
             className={'page-item ' + (page === currentPage ? 'active' : '')}
           >
             <a
-              className="page-link bg-white text-dark m-1"
+              className="page-link bg-white text-dark"
               onClick={() => onPageChange(page)}
             >
               {page}

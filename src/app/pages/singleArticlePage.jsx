@@ -17,7 +17,7 @@ const SingleArticlePage = ({ articles, id }) => {
   }
 
   return (
-    <div className="container">
+    <div>
       <div className="wrapper">
         <div className="article-body-full clearfix">
           <img
@@ -26,7 +26,7 @@ const SingleArticlePage = ({ articles, id }) => {
             alt={articleById.title}
           />
           <p className="article-title fw-bold">{articleById.title}</p>
-          <p className="article-text text-break">{articleById.fullText}</p>
+          <p className="article-text text">{articleById.fullText}</p>
         </div>
         <button onClick={handleBack} className="btn btn-sm btn-secondary">
           Назад

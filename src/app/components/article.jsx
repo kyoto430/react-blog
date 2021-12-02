@@ -13,6 +13,7 @@ const Article = ({ articlesCrop }) => {
                 backgroundImage: `url(${article.image})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             >
               <h5 className="article-title text-center fw-bolder text-shadow-2">
