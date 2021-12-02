@@ -71,7 +71,7 @@ function App() {
     console.log('handleDelete', id)
     setArticles(articles.filter((article) => article.id !== id))
   }
-  const addArticle = (title, shortText, fullText) => {
+  const addArticle = (title, shortText, fullText, image) => {
     setArticles(
       articles.concat([
         {
@@ -79,6 +79,7 @@ function App() {
           title,
           shortText,
           fullText,
+          image,
         },
       ])
     )

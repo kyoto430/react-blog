@@ -6,14 +6,16 @@ const AddAdminPage = ({ onCreate }) => {
   const [value1, setValue1] = useState('')
   const [value2, setValue2] = useState('')
   const [value3, setValue3] = useState('')
+  const [value4, setValue4] = useState('')
   const history = useHistory()
   const handleAdd = (event) => {
     event.preventDefault()
-    onCreate(value1, value2, value3)
+    onCreate(value1, value2, value3, value4)
     history.replace('/login/controlAdmin')
     setValue1('')
     setValue2('')
     setValue3('')
+    setValue4('')
   }
   return (
     <form onSubmit={handleAdd}>
@@ -38,6 +40,16 @@ const AddAdminPage = ({ onCreate }) => {
               value={value2}
               onChange={(event) => setValue2(event.target.value)}
             />
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Ссылка на изображение"
+              aria-label="image"
+              value={value4}
+              onChange={(event) => setValue4(event.target.value)}
+            />
+            <br />
           </div>
           <textarea
             className="form-control w-50 h-50"

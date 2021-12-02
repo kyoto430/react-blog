@@ -7,9 +7,20 @@ const Article = ({ articlesCrop }) => {
       {articlesCrop.map((newArray) =>
         newArray.map((article) => (
           <div key={article.id} className="article">
-            <div className="article-body">
-              <h5 className="article-title text-center">{article.title}</h5>
-              <p className="article-text">{article.shortText}</p>
+            <div
+              className="article-body"
+              style={{
+                backgroundImage: `url(${article.image})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+              }}
+            >
+              <h5 className="article-title text-center fw-bolder text-shadow-2">
+                {article.title}
+              </h5>
+              <p className="text-center fw-bold text-shadow-1 w-75">
+                {article.shortText}
+              </p>
               <Link to={`/${article.id}`} className="button">
                 Открыть
               </Link>
