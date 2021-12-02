@@ -15,14 +15,20 @@ const SingleArticlePage = ({ articles, id }) => {
   if (!articleById?.title) {
     return <Loader />
   }
+
   return (
-    <div className="container">
+    <div>
       <div className="wrapper">
-        <div className="article-body-full">
-          <h5 className="article-title">{articleById.title}</h5>
-          <p className="article-text">{articleById.fullText}</p>
+        <div className="article-body-full clearfix">
+          <img
+            className="col-md-6 float-md-end mb-3 ms-md-3 img-fluid"
+            src={articleById.image}
+            alt={articleById.title}
+          />
+          <p className="article-title fw-bold">{articleById.title}</p>
+          <p className="article-text text">{articleById.fullText}</p>
         </div>
-        <button onClick={handleBack} className="btn btn-sm btn-secondary m-2">
+        <button onClick={handleBack} className="btn btn-sm btn-secondary">
           Назад
         </button>
       </div>

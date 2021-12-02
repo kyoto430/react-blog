@@ -6,7 +6,7 @@ const ArticlesList = ({ articlesCrop }) => {
     <>
       {articlesCrop.length ? (
         <div className="wrapper">
-          <h1 className="title">Статьи</h1>
+          <h1 className="title fw-bold">Статьи</h1>
 
           <Article articlesCrop={articlesCrop} />
         </div>
