@@ -22,7 +22,7 @@ const AddAdminPage = ({ onCreate }) => {
       <div className="container">
         <div className="wrapper">
           <h3>Добавление статьи</h3>
-          <div className="m-3">
+          <div className="mb-4 mt-2">
             <input
               type="text"
               className="form-control"
@@ -49,10 +49,9 @@ const AddAdminPage = ({ onCreate }) => {
               value={value4}
               onChange={(event) => setValue4(event.target.value)}
             />
-            <br />
           </div>
           <textarea
-            className="form-control w-50 h-50"
+            className="form-control w-100 h-50"
             rows="10"
             value={value3}
             onChange={(event) => setValue3(event.target.value)}
