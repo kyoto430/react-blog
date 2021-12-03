@@ -6,13 +6,13 @@ const ControlAdminPage = ({ articles, onDelete }) => {
     <div className="container">
       <div className="container-control">
         {articles.length ? (
-          <span className="title fw-bold">Статьи</span>
+          <h1 className="position-relative">Всего статей: {articles.length}</h1>
         ) : (
           <h1>Статьи отсутствуют!</h1>
         )}
-        <div>
+        <div className="d-flex text-center">
           <Link to="/controlAdmin/addAdmin" className="button">
-            Создать статью
+            <i class="bi bi-plus-lg"></i> Создать статью
           </Link>
         </div>
       </div>
@@ -22,10 +22,10 @@ const ControlAdminPage = ({ articles, onDelete }) => {
             <div className="article-control-body">
               <div className="m-2">{article.title}</div>
               <button
-                className="btn btn-danger btn-sm"
+                className="btn btn-danger"
                 onClick={() => onDelete(article.id)}
               >
-                X
+                <i className="bi bi-x-square"></i>
               </button>
             </div>
           </div>

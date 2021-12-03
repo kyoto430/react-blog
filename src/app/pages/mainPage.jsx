@@ -21,7 +21,10 @@ const MainPage = ({ articles }) => {
       <SingleArticlePage articles={articles} id={articleId} />
     ) : (
       <>
-        <ArticlesList articlesCrop={articlesCrop} />
+        <ArticlesList
+          articlesCrop={articlesCrop}
+          articlesCount={articles.length}
+        />
         <Pagination
           articlesCount={articles.length}
           pageSize={pageSize}
