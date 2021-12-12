@@ -9,7 +9,7 @@ const fetchAll = () =>
   new Promise((resolve) => {
     window.setTimeout(function () {
       resolve(ligues)
-    }, 2000)
+    }, 3000)
   })
 
 export default {

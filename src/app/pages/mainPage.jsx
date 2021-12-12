@@ -13,6 +13,7 @@ const MainPage = ({ articles }) => {
   const { articleId } = params
   const [currentPage, setCurrentPage] = useState(1)
   const [ligues, setLigues] = useState()
+  const [selectedLigue, setSelectedLigue] = useState()
   const pageSize = 4
   useEffect(() => {
     API.ligues.fetchAll().then((data) => setLigues(data))
@@ -20,35 +21,45 @@ const MainPage = ({ articles }) => {
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
-  const handleLigueSelect = (params) => {
-    console.log(params)
+  const handleLigueSelect = (item) => {
+    setSelectedLigue(item)
+  }
+  const clearFilter = () => {
+    setSelectedLigue()
   }
 
   if (articles) {
-    const articlesCrop = paginate(articles, currentPage, pageSize)
+    const filteredArticles = selectedLigue
+      ? articles.filter((article) => article.ligue === selectedLigue)
+      : articles
+    const count = filteredArticles.length
+    const articlesCrop = paginate(filteredArticles, currentPage, pageSize)
     return articleId ? (
       <SingleArticlePage articles={articles} id={articleId} />
     ) : (
-      <>
+      <div className="d-flex">
         {ligues && (
-          <GroupList
-            items={ligues}
-            onItemSelect={handleLigueSelect}
-            valueProperty={'id'}
-            contentProperty={'name'}
-          />
+          <div className="d-flex flex-column flex-shrink-0 p-3">
+            <GroupList
+              items={ligues}
+              onItemSelect={handleLigueSelect}
+              selectedItem={selectedLigue}
+            />
+            <button className="btn btn-secondary mt-2" onClick={clearFilter}>
+              Очистить
+            </button>
+          </div>
         )}
-        <ArticlesList
-          articlesCrop={articlesCrop}
-          articlesCount={articles.length}
-        />
+
+        <ArticlesList articlesCrop={articlesCrop} articlesCount={count} />
+
         <Pagination
-          articlesCount={articles.length}
+          articlesCount={count}
           pageSize={pageSize}
           currentPage={currentPage}
           onPageChange={handlePageChange}
         />
-      </>
+      </div>
     )
   }
   return <Loader />

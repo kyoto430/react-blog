@@ -12,7 +12,7 @@ const ControlAdminPage = ({ articles, onDelete }) => {
         )}
         <div className="d-flex text-center">
           <Link to="/controlAdmin/addAdmin" className="button">
-            <i class="bi bi-plus-lg"></i> Создать статью
+            <i className="bi bi-plus-lg"></i> Создать статью
           </Link>
         </div>
       </div>
