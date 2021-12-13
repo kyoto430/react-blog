@@ -6,7 +6,7 @@ const SingleArticlePage = ({ articles, id }) => {
   const history = useHistory()
   const handleBack = (event) => {
     event.preventDefault()
-    history.replace('/')
+    history.replace('/main')
   }
   const getArticleById = (id) => {
     return articles.find((article) => article.id.toString() === id)

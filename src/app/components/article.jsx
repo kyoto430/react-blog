@@ -6,9 +6,13 @@ const Article = ({ articlesCrop }) => {
     <div className="article-group">
       {articlesCrop.map((newArray) =>
         newArray.map((article) => (
-          <div key={article.id} className="article">
+          <div
+            key={article.id}
+            className="article position-relative"
+            role={'button'}
+          >
             <div
-              className="article-body"
+              className="article-body hover-shadow-1"
               style={{
                 backgroundImage: `url(${article.image})`,
                 backgroundRepeat: 'no-repeat',

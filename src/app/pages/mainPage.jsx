@@ -18,6 +18,9 @@ const MainPage = ({ articles }) => {
   useEffect(() => {
     API.ligues.fetchAll().then((data) => setLigues(data))
   }, [])
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedLigue])
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
@@ -37,9 +40,9 @@ const MainPage = ({ articles }) => {
     return articleId ? (
       <SingleArticlePage articles={articles} id={articleId} />
     ) : (
-      <div className="d-flex">
-        {ligues && (
-          <div className="d-flex flex-column flex-shrink-0 p-3">
+      <div className="d-flex mt-3 flexColumn">
+        {ligues ? (
+          <div className="d-flex flex-shrink-0 flex-column">
             <GroupList
               items={ligues}
               onItemSelect={handleLigueSelect}
@@ -49,16 +52,20 @@ const MainPage = ({ articles }) => {
               Очистить
             </button>
           </div>
+        ) : (
+          <Loader />
         )}
-
-        <ArticlesList articlesCrop={articlesCrop} articlesCount={count} />
-
-        <Pagination
-          articlesCount={count}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+        <div className="d-flex justify-content-center flex-column container">
+          <ArticlesList articlesCrop={articlesCrop} articlesCount={count} />
+          <div className="d-flex justify-content-center">
+            <Pagination
+              articlesCount={count}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          </div>
+        </div>
       </div>
     )
   }

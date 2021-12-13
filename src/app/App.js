@@ -5,7 +5,7 @@ import ControlAdminPage from './pages/controlAdminPage'
 import LoginPage from './pages/loginPage'
 import MainPage from './pages/mainPage'
 import RegistrationPage from './pages/registrationPage'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import API from './api/index'
 import { validator } from './utils/validator'
@@ -67,6 +67,7 @@ function App() {
       setArticles(data)
     })
   }, [])
+
   const handleDelete = (id) => {
     console.log('handleDelete', id)
     setArticles(articles.filter((article) => article.id !== id))
@@ -91,14 +92,14 @@ function App() {
       <div className="container">
         <Switch>
           <Route
-            path="/controlAdmin/addAdmin"
+            path="/addAdmin"
             exact
             render={(props) => (
               <AddAdminPage onCreate={addArticle} {...props} />
             )}
           />
           <Route
-            path="/login/controlAdmin"
+            path="/controlAdmin"
             render={(props) => (
               <ControlAdminPage
                 articles={articles}
@@ -134,9 +135,10 @@ function App() {
             )}
           />
           <Route
-            path="/:articleId?"
+            path="/main/:articleId?"
             render={(props) => <MainPage articles={articles} {...props} />}
           />
+          <Redirect to="/main" />
         </Switch>
       </div>
     </>

@@ -11,7 +11,7 @@ const ControlAdminPage = ({ articles, onDelete }) => {
           <h1>Статьи отсутствуют!</h1>
         )}
         <div className="d-flex text-center">
-          <Link to="/controlAdmin/addAdmin" className="button">
+          <Link to="/addAdmin" className="button">
             <i className="bi bi-plus-lg"></i> Создать статью
           </Link>
         </div>

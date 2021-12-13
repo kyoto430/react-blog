@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navigation-link" to="/">
+        <Link className="navigation-link" to="/main">
           Главная
         </Link>
         <button

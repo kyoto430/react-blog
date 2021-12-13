@@ -11,7 +11,7 @@ const AddAdminPage = ({ onCreate }) => {
   const handleAdd = (event) => {
     event.preventDefault()
     onCreate(value1, value2, value3, value4)
-    history.replace('/login/controlAdmin')
+    history.replace('/controlAdmin')
     setValue1('')
     setValue2('')
     setValue3('')

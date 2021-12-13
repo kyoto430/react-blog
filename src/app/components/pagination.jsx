@@ -8,17 +8,14 @@ const Pagination = ({ articlesCount, pageSize, onPageChange, currentPage }) => {
   console.log('pages', pageCount)
   const arrayPages = pagesArray(pageCount)
   return (
-    <nav className="d-flex justify-content-center">
+    <nav>
       <ul className="pagination cursor">
         {arrayPages.map((page) => (
           <li
             key={page}
             className={'page-item ' + (page === currentPage ? 'active' : '')}
           >
-            <a
-              className="page-link bg-white text-dark"
-              onClick={() => onPageChange(page)}
-            >
+            <a className="page-link" onClick={() => onPageChange(page)}>
               {page}
             </a>
           </li>

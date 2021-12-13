@@ -25,7 +25,7 @@ const LoginPage = ({ onChange, onSubmit, data, errors, isValid }) => {
               error={errors.password}
             />
             <div className="wrapper">
-              <Link to="login/controlAdmin">
+              <Link to="/controlAdmin">
                 <button
                   type="submit"
                   disabled={!isValid}

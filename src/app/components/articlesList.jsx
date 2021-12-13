@@ -1,5 +1,6 @@
 import React from 'react'
 import Article from './article'
+import PropTypes from 'prop-types'
 
 const ArticlesList = ({ articlesCrop, articlesCount }) => {
   return (
@@ -20,6 +21,11 @@ const ArticlesList = ({ articlesCrop, articlesCount }) => {
       )}
     </>
   )
+}
+
+ArticlesList.propTypes = {
+  articlesCrop: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  articlesCount: PropTypes.number.isRequired,
 }
 
 export default ArticlesList
