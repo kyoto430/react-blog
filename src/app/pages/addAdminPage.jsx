@@ -3,19 +3,18 @@ import { useState } from 'react/cjs/react.development'
 import { useHistory } from 'react-router'
 
 const AddAdminPage = ({ onCreate }) => {
-  const [value1, setValue1] = useState('')
-  const [value2, setValue2] = useState('')
-  const [value3, setValue3] = useState('')
-  const [value4, setValue4] = useState('')
+  const [post, setPost] = useState({
+    title: '',
+    shortText: '',
+    fullText: '',
+    image: '',
+  })
   const history = useHistory()
   const handleAdd = (event) => {
     event.preventDefault()
-    onCreate(value1, value2, value3, value4)
+    onCreate(post.title, post.shortText, post.fullText, post.image)
     history.replace('/controlAdmin')
-    setValue1('')
-    setValue2('')
-    setValue3('')
-    setValue4('')
+    setPost('')
   }
   return (
     <form onSubmit={handleAdd}>
@@ -28,8 +27,10 @@ const AddAdminPage = ({ onCreate }) => {
               className="form-control"
               placeholder="Название"
               aria-label="Title"
-              value={value1}
-              onChange={(event) => setValue1(event.target.value)}
+              value={post.title}
+              onChange={(event) =>
+                setPost({ ...post, title: event.target.value })
+              }
             />
             <br />
             <input
@@ -37,8 +38,10 @@ const AddAdminPage = ({ onCreate }) => {
               className="form-control"
               placeholder="Короткий текст"
               aria-label="ShortText"
-              value={value2}
-              onChange={(event) => setValue2(event.target.value)}
+              value={post.shortText}
+              onChange={(event) =>
+                setPost({ ...post, shortText: event.target.value })
+              }
             />
             <br />
             <input
@@ -46,15 +49,19 @@ const AddAdminPage = ({ onCreate }) => {
               className="form-control"
               placeholder="Ссылка на изображение"
               aria-label="image"
-              value={value4}
-              onChange={(event) => setValue4(event.target.value)}
+              value={post.image}
+              onChange={(event) =>
+                setPost({ ...post, image: event.target.value })
+              }
             />
           </div>
           <textarea
             className="form-control w-100 h-50"
             rows="10"
-            value={value3}
-            onChange={(event) => setValue3(event.target.value)}
+            value={post.fullText}
+            onChange={(event) =>
+              setPost({ ...post, fullText: event.target.value })
+            }
             placeholder="Полный текст"
           ></textarea>
           <button type="submit" className="button mt-3">

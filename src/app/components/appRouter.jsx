@@ -2,12 +2,12 @@ import React from 'react'
 import { Redirect, Route, Switch } from 'react-router'
 import { routes } from '../router/routes'
 
-export const Context = React.createContext()
+export const ArticlesContext = React.createContext()
 
 const AppRouter = (props) => {
-  console.log(props.articles)
+  console.log(props)
   return (
-    <Context.Provider value={props}>
+    <ArticlesContext.Provider value={props}>
       <Switch>
         {routes.map((route) => (
           <Route
@@ -19,7 +19,7 @@ const AppRouter = (props) => {
         ))}
         <Redirect to="/main" />
       </Switch>
-    </Context.Provider>
+    </ArticlesContext.Provider>
   )
 }
 

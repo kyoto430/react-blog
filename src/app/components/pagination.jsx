@@ -9,7 +9,7 @@ const Pagination = ({ articlesCount, pageSize, onPageChange, currentPage }) => {
   const arrayPages = pagesArray(pageCount)
   return (
     <nav>
-      <ul className="pagination cursor">
+      <ul className="pagination" role={'button'}>
         {arrayPages.map((page) => (
           <li
             key={page}

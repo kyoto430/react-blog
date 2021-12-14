@@ -9,6 +9,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import API from './api/index'
 import { validator } from './utils/validator'
+// import AppRouter from './components/appRouter'
 
 function App() {
   const [data, setData] = useState({ email: '', password: '' })
@@ -72,7 +73,7 @@ function App() {
     console.log('handleDelete', id)
     setArticles(articles.filter((article) => article.id !== id))
   }
-  const addArticle = (title, shortText, fullText, image) => {
+  const handleAdd = (title, shortText, fullText, image) => {
     setArticles(
       articles.concat([
         {
@@ -94,9 +95,7 @@ function App() {
           <Route
             path="/addAdmin"
             exact
-            render={(props) => (
-              <AddAdminPage onCreate={addArticle} {...props} />
-            )}
+            render={(props) => <AddAdminPage onCreate={handleAdd} {...props} />}
           />
           <Route
             path="/controlAdmin"
@@ -140,6 +139,16 @@ function App() {
           />
           <Redirect to="/main" />
         </Switch>
+        {/* <AppRouter
+          articles={articles}
+          onDelete={handleDelete}
+          onCreate={addArticle}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          data={data}
+          errors={errors}
+          isValid={isValid}
+        /> */}
       </div>
     </>
   )

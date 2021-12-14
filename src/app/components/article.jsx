@@ -26,8 +26,8 @@ const Article = ({ articlesCrop }) => {
               <p className="text-center fw-bold text-shadow-1 w-75">
                 {article.shortText}
               </p>
-              <Link to={`/${article.id}`} className="button">
-                Открыть
+              <Link to={`/main/${article.id}`} className="button">
+                Читать
               </Link>
             </div>
           </div>

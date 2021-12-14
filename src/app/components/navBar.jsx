@@ -23,7 +23,7 @@ const NavBar = () => {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
             <li className="nav-item p-2">
               <Link className="nav-link fw-bold" to="/login">
-                Вход/Регистрация
+                <i className="bi bi-box-arrow-in-right"></i> Вход/Регистрация
               </Link>
             </li>
           </ul>

@@ -16,7 +16,7 @@ const ControlAdminPage = ({ articles, onDelete }) => {
           </Link>
         </div>
       </div>
-      <div className="d-flex flex-column align-items-center mb-2">
+      <div className="d-flex flex-column align-items-start mb-2">
         {articles.map((article) => (
           <div key={article.id} className="article">
             <div className="article-control-body">
